@@ -12,3 +12,6 @@ Same to WES data, this generated gene expression TPM data for each patients and 
 
 ## plotEQTL.R
 This R script is used for generating box plots for selected SNP-Gene pairs.
+
+## Hail_split.ipynb
+Hail v0.2 used to split multialleic sites to bialleic sites.
