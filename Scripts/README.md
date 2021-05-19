@@ -15,3 +15,6 @@ This R script is used for generating box plots for selected SNP-Gene pairs.
 
 ## Hail_split.ipynb
 Hail v0.2 used to split multialleic sites to bialleic sites.
+
+## somatic-merge.sh
+This provides a sh script to extract and combine all the 100 passed somatic mutation files and count the mutation numbers.
