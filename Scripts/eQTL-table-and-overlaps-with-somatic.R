@@ -3,7 +3,7 @@ rm(list=ls())
 library(dplyr)
 path_raw<-"/Users/mstermo/Degree_Project/data"
 
-# Calculate the eGenes
+# Count the somatic mutated genes
 setwd(path_raw)
 somatic_mutation_gene <- read.table('only_somatic_gene.list.txt',header = FALSE,row.names = NULL)
 #check the somatic mutation's frequency:
