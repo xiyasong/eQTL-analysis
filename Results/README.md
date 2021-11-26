@@ -1,6 +1,9 @@
 
+## Japan_eqtl_final_0.05
+This is the 805 final significant (qval <0.05 ) eQTLs table for the Japanese cohort and it contains annotated gene information and SNP information.
+
 ## eQTL-ccRCC-final.genes.annotated.txt
-This is the final eQTL table that contains annotated gene information and SNP information, with statistics value.
+This is the all the eQTLs for the Japanese cohort that contains annotated gene information and SNP information, with statistics value.
 
 ## eQTL-ccRCC-final.signifpairs.txt
 This file includes all the significant SNP-Gene pairs have a FDR < 0.05.
