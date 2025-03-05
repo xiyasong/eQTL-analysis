@@ -1,0 +1,25 @@
+### Docker run of FastQTL for JP cohort eQTL
+
+
+1.Gene expression normalization：
+Gene expression values for all samples from a given tissue were normalized for eQTL analyses using the following procedure:
+1) read counts were normalized between samples using TMM [69]; 
+2) genes were selected based on expression thresholds of ≥0.1 TPM in ≥20% of samples and ≥6 reads (unnormalized) in ≥20% of samples; 
+3) expression values for each gene were inverse normal transformed across samples
+
+eqtl_prepare_expression.py ${tpm_gct} ${counts_gct} ${annotation_gtf} \
+    ${sample_participant_lookup} ${vcf_chr_list} ${prefix} \
+    --tpm_threshold 0.1 \
+    --count_threshold 6 \
+    --sample_frac_threshold 0.2 \
+    --normalization_method tmm
+
+docker run --rm -v /Users/mstermo/Degree_Project/data:/data -t broadinstitute/gtex_eqtl:V8 /bin/bash \
+    -c "/src/eqtl_prepare_expression.py --output_dir /data /data/Total_tpm.gct.gz /data/Total_gene_counts.gct.gz \
+        /data/GENCODE_gencode.v26.GRCh38.ERCC.genes.gtf /data/sample_participant_lookup.txt /data/EGAR00001120416_ccRCC-1-tumor.realigned.marked.BQSR.bam.g.vcf.gz_chr? eQTL-ccRCC \
+        --tpm_threshold 0.1 --count_threshold 6 --sample_frac_threshold 0.2 --normalization_method tmm"
+
+docker run --rm -v /Users/mstermo/Degree_Project/data:/data -t broadinstitute/gtex_eqtl:V8 /bin/bash \
+    -c "/src/eqtl_prepare_expression.py --output_dir /data /data/Total_tpm.gct.gz /data/Total_gene_counts.gct.gz \
+        /data/GENCODE_gencode.v26.GRCh38.ERCC.genes.gtf /data/sample_participant_lookup.txt /data/ccRCC-output-chr20.vcf.gz.chr.list eQTL-ccRCC_chr20 \
+        --tpm_threshold 0.1 --count_threshold 6 --sample_frac_threshold 0.2 --normalization_method tmm"
