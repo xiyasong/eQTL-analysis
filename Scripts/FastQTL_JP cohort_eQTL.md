@@ -16,7 +16,6 @@ docker run --rm -v /Users/mstermo/Degree_Project/data:/data -t broadinstitute/gt
 
 ### 3 Combine covariates
 ```
-
 # adding sex variant
 docker run --rm -v /Users/mstermo/Degree_Project/data:/data -t broadinstitute/gtex_eqtl:V8 /bin/bash \-c "/src/combine_covariates.py /data/eQTL-ccRCC.PEER_covariates.txt eQTL-ccRCC --add_covariates /data/Sex_cov.txt -o /data"
 ```
