@@ -20,6 +20,9 @@ This step gather all the per-sample GVCFs (or combined GVCFs if we are working w
 This sh file contatins the pipeline for raw RNA-seq data's pre-processing and quantification using RNA-SeQC.
 Same to WES data, this generated gene expression TPM data for each patients and combined to a sum file later.
 
+## FastQTL_JP cohort_eQTL.md
+Performing QTL analysis using FastQTL, following the Broad Institute Pipeline.
+
 ## plotEQTL.R
 This R script is used for generating box plots for selected SNP-Gene pairs.
 
